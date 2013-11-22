@@ -36,7 +36,7 @@ module Coursewareable
     validates_presence_of :title, :description
     validates_uniqueness_of :slug, :case_sensitive => false
     validates_exclusion_of :slug, :in => Coursewareable.config.domain_blacklist
-    validates_length_of :slug, :minimum => 4, :maximum => 32
+    validates_length_of :slug, :minimum => 3, :maximum => 32
 
     # Track activities
     tracked(:owner => :owner, :only => [:create], :params => {
